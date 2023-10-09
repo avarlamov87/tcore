@@ -32,6 +32,14 @@
             <id>tpack</id>
             <username>avarlamov87</username>
             <password>${env.DEPLOY_GITHUB_TOKEN}</password>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Authorization</name>
+                        <value>Bearer ${env.DEPLOY_GITHUB_TOKEN}</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
         </server>
     </servers>
 
