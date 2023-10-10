@@ -16,7 +16,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'corretto'
+          overwrite-settings: false
       - name: Publish package
         run: mvn -B -e -Dmaven.wagon.http.pool=false deploy
         env:
-          DEPLOY_GITHUB_TOKEN: '${{ secrets.DEPLOY_GITHUB_TOKEN }}'
+          DEPLOY_TOKEN: '${{ secrets.DEPLOY_TOKEN }}'

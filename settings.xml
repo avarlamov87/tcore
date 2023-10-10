@@ -13,10 +13,6 @@
             <id>github</id>
             <repositories>
                 <repository>
-                    <id>central</id>
-                    <url>https://repo1.maven.org/maven2</url>
-                </repository>
-                <repository>
                     <id>tpack</id>
                     <url>https://maven.pkg.github.com/avarlamov87/tpack</url>
                     <snapshots>
@@ -31,15 +27,15 @@
         <server>
             <id>tpack</id>
             <username>avarlamov87</username>
-            <password>${env.DEPLOY_GITHUB_TOKEN}</password>
-            <configuration>
-                <httpHeaders>
-                    <property>
-                        <name>Authorization</name>
-                        <value>Bearer ${env.DEPLOY_GITHUB_TOKEN}</value>
-                    </property>
-                </httpHeaders>
-            </configuration>
+            <password>${env.DEPLOY_TOKEN}</password>
+<!--            <configuration>-->
+<!--                <httpHeaders>-->
+<!--                    <property>-->
+<!--                        <name>Authorization</name>-->
+<!--                        <value>Bearer ${env.DEPLOY_GITHUB_TOKEN}</value>-->
+<!--                    </property>-->
+<!--                </httpHeaders>-->
+<!--            </configuration>-->
         </server>
     </servers>
 
