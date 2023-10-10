@@ -16,8 +16,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'corretto'
-          overwrite-settings: false
+          server-id: tpack
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
       - name: Publish package
-        run: mvn -B -e -Dmaven.wagon.http.pool=false deploy
+        run: mvn --batch-mode deploy
         env:
-          DEPLOY_TOKEN: '${{ secrets.DEPLOY_TOKEN }}'
+          MAVEN_USERNAME: 'avarlamov87'
+          MAVEN_PASSWORD: ${{ secrets.DEPLOY_TOKEN }}
